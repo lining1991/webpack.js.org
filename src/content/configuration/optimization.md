@@ -394,10 +394,7 @@ module.exports = {
 ## `optimization.usedExports`
 
 `bool`
-
-Tells webpack to determine used exports for each module. This depends on [`optimization.providedExports`](#optimization-occurrenceorder). Information collected by `optimization.usedExports` is used by other optimizations or code generation i.e. exports are not generated for unused exports, export names are mangled to single char identifiers when all usages are compatible.
-Dead code elimination in minimizers will benefit from this and can remove unused exports.
-By default `optimization.usedExports` is enabled in `production` [mode](/concepts/mode/) and disabled elsewise.
+这个选项用于告诉webapck决定对每一个模块使用export的方式。这个选项同时依赖[`optimization.providedExports`]选项。(#optimization-occurrenceorder)`optimization.usedExports`会收集信息以用于其他优化选项或者代码打包等等。当所有的用例相互兼容的时候，导出的名称会被拆分成单个的字符标识。消除无用代码的最小化程序将会从中收益并且移除未使用的导出。生产环境`production`模式下`optimization.usedExports` 默认是开启的，其他情况该选项是默认关闭的。
 
 __webpack.config.js__
 
